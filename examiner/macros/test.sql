@@ -14,7 +14,7 @@
         {% set tmp_relation = api.Relation.create(
             identifier=tmp_identifier, schema=schema, database=database, type='table') -%} %}
 
-        {% if old_relation and identifier == 'recon_log'%}
+        {% if old_relation and identifier == 'fruit_duplicate_log'%}
             {% set build_sql =  build_append_only_sql(target_relation, tmp_relation) %}
         {% else %}
             {%- set build_sql =  build_append_only_initial_sql(target_relation, tmp_relation) %}

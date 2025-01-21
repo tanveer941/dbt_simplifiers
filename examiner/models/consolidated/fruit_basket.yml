@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: fruit_basket_consolidated
+    columns:
+      - name: fruit_row_id # unigue for each fruit or each row in the table
+        tests:
+          - dbt_utils.not_constant:
+            name: fruit_duplicate_check
+            alias: fruit_duplicate_log
+            config:
+              store_failures: true
+              schema: dqa
+              severity: warn
