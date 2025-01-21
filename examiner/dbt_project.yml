@@ -33,4 +33,6 @@ models:
   examiner:
     # Config indicated by + and applies to all files under models/example/
     consolidated:
+      +materialized: view
+    stream_table:
       +materialized: incremental
