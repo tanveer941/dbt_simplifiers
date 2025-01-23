@@ -27,14 +27,11 @@ Few examples to leverage dbt efficiently and write better code
   - The table name is explicitly is mentioned in test materialization implementation because we do not want to proppogate this to other tables.
   - To run execute the following commands - ``` dbt deps && dbt test```
 
-- override test materialization to store failed records in a separate table. Show where to specify the table so that it stores in that table onluy
-- how to use the dbt_utils package to write a test that checks if a column is unique
-- intentionally fail a test case and show how to do that and save failed records in the table
-- write a custom test macro to perform an activity and show how to use it in the test
+- Goal is to simply run a query to perform an operation. It may be select, update or insert. Also, perform test whether the macro works as expected.
+  - To create a table simply execute the command ```dbt run-operation fruit_table_creation``` It will run the logic defined in the [fruit_table_creation.sql](./examiner/operations/fruit_table_creation.sql) file.
 
-- How to run simple queries in dbt, iterations, blocks to just give specific results
-- run-operation usage
-- ```dbt run-operation fruit_table_creation```
 
-- Write a test case for macro
-- is_fruit_exist macro and its corresponding test case test_is_fruit_exist
+- Goal is to perform a simple unit test on the macro.
+  - The macro [is_fruit_exist](./examiner/macros/is_fruit_exist.sql) is created to check whether the fruit exists in the table or not.
+  - The test case [test_is_fruit_exist](./examiner/macros/test_macros/test_get_fruit_id.sql) is created to test the macro.
+  - To run execute the following commands - ``` dbt deps && dbt run-operation test_is_fruit_exist```
