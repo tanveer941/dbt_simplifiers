@@ -15,3 +15,6 @@ Few examples to leverage dbt efficiently and write better code
 - intentionally fail a test case and show how to do that and save failed records in the table
 - write a custom test macro to perform an activity and show how to use it in the test
 
+- How to run simple queries in dbt, iterations, blocks to just give specific results
+- run-operation usage
+- ```dbt run-operation fruit_table_creation```
