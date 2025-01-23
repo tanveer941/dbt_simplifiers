@@ -18,3 +18,6 @@ Few examples to leverage dbt efficiently and write better code
 - How to run simple queries in dbt, iterations, blocks to just give specific results
 - run-operation usage
 - ```dbt run-operation fruit_table_creation```
+
+- Write a test case for macro
+- is_fruit_exist macro and its corresponding test case test_is_fruit_exist
